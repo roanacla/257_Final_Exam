@@ -212,7 +212,7 @@ class Topics_with_LDA_Bigram:
     X_test =  X_test.reshape(-1, 1)
 
       
-    fake_news_classifier = pickle.load(open('/content/drive/MyDrive/MLFall2020/girlswhocode/models/LogisticRegression_model.sav', 'rb'))
+    fake_news_classifier = pickle.load(open('/content/GirlsWhoCode/SupportingFiles/LogisticRegression_model.sav', 'rb'))
     predicted = fake_news_classifier.predict(X_test)
     predicedProb = fake_news_classifier.predict_proba(X_test)[:,1]
 

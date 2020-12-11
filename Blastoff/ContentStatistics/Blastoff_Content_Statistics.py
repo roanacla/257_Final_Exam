@@ -106,7 +106,7 @@ class BlastoffContentStatistics(object):
 
         archive = ZipFile('/content/Blastoff/SupportingFiles/bcs_encoder.zip')
         for file in archive.namelist():
-            archive.extract(file, './')
+            archive.extract(file, '/content/Blastoff/SupportingFiles/')
         self.encoder = keras.models.load_model('/content/Blastoff/SupportingFiles/bcs_encoder')
 
         if mpath:

@@ -15,8 +15,8 @@ from autogluon.text import TextPrediction as task
 
 class CerealKillers_PsychologicalUtility:
   def __init__(self):
-    self.predictor_rank = task2.load('/content/CerealKillers_AlternusVera/PU/ag_predict')
-    self.predictor_sts  = task.load('/content/CerealKillers_AlternusVera/PU/saved_dir')
+    self.predictor_rank = task2.load('/content/CerealKillers/PsychologicalUtility/ag_predict')
+    self.predictor_sts  = task.load('/content/CerealKillers/PsychologicalUtility/saved_dir')
 
   def predict(self, text, bt=0,f=0,ht=0,mt=0,po=0):
     rank_test  = pd.DataFrame(np.array([[bt,f,ht,mt,po]]), columns=['BARELY TRUE', 'FALSE', 'HALF TRUE', 'MOSTLY TRUE', 'PANTS ON'])

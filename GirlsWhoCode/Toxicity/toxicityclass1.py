@@ -64,7 +64,7 @@ class GirlsWhoCode_Toxicity:
 
     import tensorflow as tf
     import ktrain
-    toxicityPredictor = ktrain.load_predictor('/content/drive/MyDrive/MLFall2020/girlswhocode/models/BERTOnLiarLiar')
+    toxicityPredictor = ktrain.load_predictor('/content/GirlsWhoCode/SupportingFiles/BERTOnLiarLiar')
     news = df.loc[:,'headline_text']
     dt = news.values
     df['toxicity'] =  toxicityPredictor.predict(dt)
@@ -232,7 +232,7 @@ class GirlsWhoCode_Toxicity:
     X_test =  X_test.reshape(-1, 1)
     #y_test = df_testing['label']
     import pickle
-    fake_news_classifier = pickle.load(open('/content/drive/MyDrive/MLFall2020/girlswhocode/models/toxicityModel.sav', 'rb'))
+    fake_news_classifier = pickle.load(open('/content/GirlsWhoCode/SupportingFiles/toxicityModel.sav', 'rb'))
     cols = list(df_testing.columns)
     cols.remove('headline_text')
     #cols.remove('label')

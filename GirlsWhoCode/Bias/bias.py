@@ -146,8 +146,8 @@ class Gwc_Bias():
       dfrme['total']     = dfrme.apply(lambda x: x.total_spin_bias + x.total_subj_bias + x.total_sens_bias, axis=1)
       dfrme['bias']      = dfrme.apply(lambda x: Gwc_Bias.get_wasserstein_dist(x.total_spin_bias, x.total_subj_bias, x.total_sens_bias, x.sentiment_score), axis =1)
 
-      tfidf = pickle.load(open('/content/drive/MyDrive/MLFall2020/girlswhocode/models/tfidf_bias.pk', 'rb'))
-      sc = pickle.load(open('/content/drive/MyDrive/MLFall2020/girlswhocode/models/scaler_bias.pkl', 'rb'))
+      tfidf = pickle.load(open('/content/GirlsWhoCode/SupportingFiles/tfidf_bias.pk', 'rb'))
+      sc = pickle.load(open('/content/GirlsWhoCode/SupportingFiles/scaler_bias.pkl', 'rb'))
       # predicted_LogR = self.model.predict(X_test)
       # score = metrics.accuracy_score(y_test, predicted_LogR)
       Xtxt_text  = tfidf.transform(dfrme['text'])
@@ -156,7 +156,7 @@ class Gwc_Bias():
 
       Xtxt  = sparse.hstack([Xtxt_text, Xtxt_bias]).tocsr()
 
-      fakeNewsClassifier = pickle.load(open('/content/drive/MyDrive/MLFall2020/girlswhocode/models/Bias_model.sav', 'rb'))
+      fakeNewsClassifier = pickle.load(open('/content/GirlsWhoCode/SupportingFiles/Bias_model.sav', 'rb'))
       predicted = fakeNewsClassifier.predict(Xtxt)
       predicedProb = fakeNewsClassifier.predict_proba(Xtxt)[:,1]
       #return predicted, predicedProb

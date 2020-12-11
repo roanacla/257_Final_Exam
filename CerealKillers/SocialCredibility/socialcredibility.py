@@ -17,7 +17,7 @@ import pickle
 class CerealKillers_SocialCredibility:
   def __init__(self):
     config = configparser.ConfigParser()
-    config.read('/content/CerealKillers_AlternusVera/SC/twitter_api.ini')
+    config.read('/content/CerealKillers/SocialCredibility/twitter_api.ini')
     self.user_info = {}
     self.user_data = []
     self.consumer_key        = config.get('default','apikey')
@@ -45,7 +45,7 @@ class CerealKillers_SocialCredibility:
   def predict(self, data):
     X = pd.DataFrame([data], columns=['followers','favorites','friends','listed_count','statuses_count','status_retweeted','status_favorited'])
     #RFC = pickle.load( open("/content/CerealKillers_AlternusVera/SC/SocialCredibility.pkl", "rb") )
-    RFC = pickle.load( open("/content/CerealKillers_AlternusVera/SC/SocialCredibilityV2.pkl", "rb") )
+    RFC = pickle.load( open("/content/CerealKillers/SocialCredibility/SocialCredibilityV2.pkl", "rb") )
     y = RFC.predict(X)
     return y[0]
 

@@ -314,7 +314,7 @@ class Girlswhocode_PoliticalAfiiliation:
       df_testing['liberterian_vector'] = Girlswhocode_PoliticalAfiiliation.get_issues_vector(df_testing,libertarian_issues)
       print(df_testing.columns)
 
-      party_affiliation_dict = pd.read_csv('/content/GirlsWhoCode/party_affiliaiton_dict.csv')
+      party_affiliation_dict = pd.read_csv('/content/GirlsWhoCode/PoliticalAfiliation/party_affiliaiton_dict.csv')
 
       TF_scores = Girlswhocode_PoliticalAfiiliation.computeTF(df_testing, party_affiliation_dict)
       IDF_scores = Girlswhocode_PoliticalAfiiliation.computeIDF(df_testing, party_affiliation_dict)
@@ -328,7 +328,7 @@ class Girlswhocode_PoliticalAfiiliation:
       df_testing['tfidf'] = tfidf_test
 
       #tfidf wrt issues, get the issues dictionary which has the frequency of all the issues
-      issues_dict = pd.read_csv('/content/GirlsWhoCode/new_dict.csv')
+      issues_dict = pd.read_csv('/content/GirlsWhoCode/PoliticalAfiliation/new_dict.csv')
 
       TFissues_scores = Girlswhocode_PoliticalAfiiliation.computeTF(df_testing, issues_dict)
       IDFissues_scores = Girlswhocode_PoliticalAfiiliation.computeIDF(df_testing, issues_dict)
@@ -351,7 +351,7 @@ class Girlswhocode_PoliticalAfiiliation:
 
       #load train dataset to get the dictionary of issues to calculate the topic score of each headline text
       colnames = ['jsonid', 'label', 'headline_text', 'subject', 'speaker', 'speakerjobtitle', 'stateinfo','partyaffiliation', 'barelytruecounts', 'falsecounts','halftruecounts','mostlytrueocunts','pantsonfirecounts','context']
-      df_train = pd.read_csv('/content/GirlsWhoCode/train.tsv', sep='\t', names = colnames,error_bad_lines=False)
+      df_train = pd.read_csv('/content/GirlsWhoCode/PoliticalAfiliation/train.tsv', sep='\t', names = colnames,error_bad_lines=False)
       #preprocess the df_train headline_text
       df_train = Girlswhocode_PoliticalAfiiliation.train_preprocess(df_train)
       print(df_train.columns)
@@ -383,7 +383,7 @@ class Girlswhocode_PoliticalAfiiliation:
       X_test = np.array(X_test)
       X_test = X_test.reshape(-1,1)
       #load the saved model
-      fakenews_classifier = pickle.load(open('/content/GirlsWhoCode/political_affiliation_model.sav', 'rb'))
+      fakenews_classifier = pickle.load(open('/content/GirlsWhoCode/PoliticalAfiliation/political_affiliation_model.sav', 'rb'))
 
       #predict the test input
       binary_value_predicted, predicted_proba = Girlswhocode_PoliticalAfiiliation.predict(fakenews_classifier, X_test)

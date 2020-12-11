@@ -15,8 +15,8 @@ import torch.nn as nn
 class CerealKillers_SentimentClassifier(nn.Module):
   def __init__(self):
     super(CerealKillers_SentimentClassifier, self).__init__()
-    self.tokenizer = BertTokenizer.from_pretrained('/content/CerealKillers_AlternusVera/BERT/saved_model/')
-    self.bert = BertModel.from_pretrained('/content/CerealKillers_AlternusVera/BERT/saved_model/')
+    self.tokenizer = BertTokenizer.from_pretrained('/content/CerealKillers/BERT/saved_model/')
+    self.bert = BertModel.from_pretrained('/content/CerealKillers/BERT/saved_model/')
     self.class_names = ['true','pants-fire']
     self.n_classes = len(self.class_names)
     self.drop = nn.Dropout(p=0.3)
