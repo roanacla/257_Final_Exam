@@ -981,7 +981,7 @@ import xgboost as xgb
 import lightgbm as lgb
 
 class TitleVsBody():
-    model_path = "./"
+    model_path = ""
     file_name = "/content/TheFeatureFinders/SupportingFiles/titlevsbody_logistic_proba.pkl"
     titlevsbody_logistic_proba = pickle.load(open(model_path + file_name, "rb"))
 
