@@ -41,7 +41,7 @@ from scipy import sparse
 
 
 
-model = gensim.models.KeyedVectors.load_word2vec_format('/content/Copy of GoogleNews-vectors-negative300.bin.gz', binary=True)
+model = gensim.models.KeyedVectors.load_word2vec_format('/content/TheShinningUnicorns/SupportingFiles/Copy of GoogleNews-vectors-negative300.bin.gz', binary=True)
 words = model.index2word
 
 w_rank = {}
@@ -179,7 +179,7 @@ import pickle
 class ContentStatistics():
 
   def predict(self,text):
-    model = pickle.load(open("/content/drive/My Drive/MLFall2020/The-Shinning-Unicorns/Alternus_Vera_Final/Darshan_Data/finalized_model3.sav",'rb'))
+    model = pickle.load(open("/content/TheShinningUnicorns/SupportingFiles/finalized_model3.sav",'rb'))
     length=len(text)
     text=cleaning(text)
     text=spell_checker(text)

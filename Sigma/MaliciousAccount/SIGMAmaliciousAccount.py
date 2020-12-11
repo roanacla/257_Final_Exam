@@ -101,7 +101,7 @@ class MalicousAccount( object ):
     def save(self, *args, **kwargs):
         import pickle  # Import pickle Packag
         from sklearn.ensemble import RandomForestClassifier
-        modelName = kwargs.get('modelName', 'MalicousAccount.pkl')
+        modelName = kwargs.get('modelName', '/content/Sigma/MaliciousAccount/MalicousAccount.pkl')
         model2save = kwargs.get('model2save', MLPClassifier(alpha=1, max_iter=1000))
         with open(modelName, 'wb') as file:  
             pickle.dump(model2save, file)

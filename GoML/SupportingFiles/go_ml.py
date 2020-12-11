@@ -63,17 +63,17 @@ import pickle
 
 """## Stance Detection"""
 
-temp_drive = drive.CreateFile({'id': 'https://drive.google.com/file/d/1woRoo1pna6hKoQ62JI3My2k4KCm7_6hh/view?usp=sharing'.split('/')[-2]})
-temp_drive.GetContentFile('SVM_stance_detection.model')
+# temp_drive = drive.CreateFile({'id': 'https://drive.google.com/file/d/1woRoo1pna6hKoQ62JI3My2k4KCm7_6hh/view?usp=sharing'.split('/')[-2]})
+# temp_drive.GetContentFile('SVM_stance_detection.model')
 
-temp_drive = drive.CreateFile({'id': 'https://drive.google.com/file/d/1tLxMwnfLhcmsVjWHnEa9TeeCrSdVHDM0/view?usp=sharing'.split('/')[-2]})
-temp_drive.GetContentFile('vector_stance_detection.pkl')
+# temp_drive = drive.CreateFile({'id': 'https://drive.google.com/file/d/1tLxMwnfLhcmsVjWHnEa9TeeCrSdVHDM0/view?usp=sharing'.split('/')[-2]})
+# temp_drive.GetContentFile('vector_stance_detection.pkl')
 
 class StanceDetection():
 
     def __init__(self):        
-        self.clf = pickle.load(open('/content/GoML/SVM_stance_detection.model','rb'))
-        self.vector: TfidfVectorizer = pickle.load(open('/content/GoML/vector_stance_detection.pkl', 'rb'))
+        self.clf = pickle.load(open('/content/GoML/StanceDetection/SVM_stance_detection.model','rb'))
+        self.vector: TfidfVectorizer = pickle.load(open('/content/GoML/StanceDetection/vector_stance_detection.pkl', 'rb'))
               
     def predict(self, text):
         a = self.vector.transform([text])
@@ -90,17 +90,17 @@ getStanceDetectionScore("hey man how are you?")
 
 """## Clickbait Detection"""
 
-temp_drive = drive.CreateFile({'id': 'https://drive.google.com/file/d/16norntMWxj2ljjRY8UtFpyhtd2teEYJe/view?usp=sharing'.split('/')[-2]})
-temp_drive.GetContentFile('RF_clickbait.model')
+# temp_drive = drive.CreateFile({'id': 'https://drive.google.com/file/d/16norntMWxj2ljjRY8UtFpyhtd2teEYJe/view?usp=sharing'.split('/')[-2]})
+# temp_drive.GetContentFile('RF_clickbait.model')
 
-temp_drive = drive.CreateFile({'id': 'https://drive.google.com/file/d/1wEXHnjj0yAeTKJmj-noUIKFqhrMuHpwT/view?usp=sharing'.split('/')[-2]})
-temp_drive.GetContentFile('vector_clickbait.pkl')
+# temp_drive = drive.CreateFile({'id': 'https://drive.google.com/file/d/1wEXHnjj0yAeTKJmj-noUIKFqhrMuHpwT/view?usp=sharing'.split('/')[-2]})
+# temp_drive.GetContentFile('vector_clickbait.pkl')
 
 class Clickbait():
 
     def __init__(self):        
-        self.clf = pickle.load(open('/content/GoML/RF_clickbait.model','rb'))
-        self.vector: TfidfVectorizer = pickle.load(open('/content/GoML/vector_clickbait.pkl', 'rb'))
+        self.clf = pickle.load(open('/content/GoML/ClickBait/RF_clickbait.model','rb'))
+        self.vector: TfidfVectorizer = pickle.load(open('/content/GoML/ClickBait/vector_clickbait.pkl', 'rb'))
               
     def predict(self, text):
         a = self.vector.transform([text])
@@ -117,17 +117,17 @@ getClickbaitScore("Should You bring the money now")
 
 """## News Coverage"""
 
-temp_drive = drive.CreateFile({'id': 'https://drive.google.com/file/d/1AKTM3HyxsC0uKfzVKsNdc_JQ5TXnjbht/view?usp=sharing'.split('/')[-2]})
-temp_drive.GetContentFile('RF_news_coverage.model')
+# temp_drive = drive.CreateFile({'id': 'https://drive.google.com/file/d/1AKTM3HyxsC0uKfzVKsNdc_JQ5TXnjbht/view?usp=sharing'.split('/')[-2]})
+# temp_drive.GetContentFile('RF_news_coverage.model')
 
-temp_drive = drive.CreateFile({'id': 'https://drive.google.com/file/d/1VAZF05pt59sYNjY4siLrkHY1208cf3rS/view?usp=sharing'.split('/')[-2]})
-temp_drive.GetContentFile('vector_news_coverage.pkl')
+# temp_drive = drive.CreateFile({'id': 'https://drive.google.com/file/d/1VAZF05pt59sYNjY4siLrkHY1208cf3rS/view?usp=sharing'.split('/')[-2]})
+# temp_drive.GetContentFile('vector_news_coverage.pkl')
 
 class NewsCoverage():
 
     def __init__(self):        
-        self.clf = pickle.load(open('/content/GoML/RF_news_coverage.model','rb'))
-        self.vector: TfidfVectorizer = pickle.load(open('/content/GoML/vector_news_coverage.pkl', 'rb'))
+        self.clf = pickle.load(open('/content/GoML/NewsCoverage/RF_news_coverage.model','rb'))
+        self.vector: TfidfVectorizer = pickle.load(open('/content/GoML/NewsCoverage/vector_news_coverage.pkl', 'rb'))
               
     def predict(self, text):
         a = self.vector.transform([text])
@@ -147,9 +147,9 @@ getNewsCoverageScore("Donald trump will win")
 class WritingStyle():
 
   def __init__(self):
-    temp_writtingStyle_drive = drive.CreateFile({'id': 'https://drive.google.com/file/d/1iRZvUoFB6nRp0LNtyzDNYOFtNxF8Szxs/view?usp=sharing'.split('/')[-2]})
-    temp_writtingStyle_drive.GetContentFile('writting_style.pkl')
-    self.clf = pickle.load(open('/content/GoML/writting_style.pkl','rb'))
+    # temp_writtingStyle_drive = drive.CreateFile({'id': 'https://drive.google.com/file/d/1iRZvUoFB6nRp0LNtyzDNYOFtNxF8Szxs/view?usp=sharing'.split('/')[-2]})
+    # temp_writtingStyle_drive.GetContentFile('writting_style.pkl')
+    self.clf = pickle.load(open('/content/GoML/WritingStyle/writting_style.pkl','rb'))
 
   def predict(self, text):
     predicted = self.clf.predict([text])

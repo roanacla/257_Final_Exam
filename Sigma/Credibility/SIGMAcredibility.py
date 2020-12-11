@@ -100,7 +100,7 @@ class Credibility( object ):
     def save(self, *args, **kwargs):
         import pickle  # Import pickle Packag
         from sklearn.ensemble import RandomForestClassifier
-        modelName = kwargs.get('modelName', 'MalicousAccount.pkl')
+        modelName = kwargs.get('modelName', '/content/Sigma/Credibility/MalicousAccount.pkl')
         model2save = kwargs.get('model2save', RandomForestClassifier(criterion='gini', min_samples_leaf=50, min_samples_split=10)) #self.dfCls['classifier'].values[0])
         with open(modelName, 'wb') as file:  
             pickle.dump(model2save, file)

@@ -688,7 +688,7 @@ from sklearn.preprocessing import normalize
 from functools import reduce
 
 class Word2VecFeatureGenerator(FeatureGenerator):
-    model = gensim.models.KeyedVectors.load_word2vec_format("./GoogleNews-vectors-negative300.bin", binary=True)
+    model = gensim.models.KeyedVectors.load_word2vec_format("/content/TheFeatureFinders/SupportingFiles/GoogleNews-vectors-negative300.bin", binary=True)
 
     def __init__(self, name='word2vecFeatureGenerator'):
         super(Word2VecFeatureGenerator, self).__init__(name)
@@ -982,7 +982,7 @@ import lightgbm as lgb
 
 class TitleVsBody():
     model_path = "./"
-    file_name = "titlevsbody_logistic_proba.pkl"
+    file_name = "/content/TheFeatureFinders/SupportingFiles/titlevsbody_logistic_proba.pkl"
     titlevsbody_logistic_proba = pickle.load(open(model_path + file_name, "rb"))
 
     '''
@@ -1085,7 +1085,7 @@ class TitleVsBody():
         dtest = xgb.DMatrix(test_x)
 
         # load model
-        model_path = "/content/drive/My Drive/MLFall2020/the-feature-finders/AlternusVera/pickled-model/"
+        model_path = "/content/TheFeatureFinders/SupportingFiles/"
         file_name = "titlevsbody_xgboost.pkl"
         bst = pickle.load(open(model_path + file_name, "rb"))
         #print('bst type:', type(bst))

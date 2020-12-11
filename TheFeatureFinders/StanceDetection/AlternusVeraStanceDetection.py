@@ -214,7 +214,7 @@ class StanceDitectionFeature():
 
   def generate_fn_features(self,dataset,name):
     h, b = [],[]
-    base_path = '/content/drive/MyDrive/MLFall2020/the-feature-finders/AlternusVera/Stance/'
+    base_path = '/content/TheFeatureFinders/StanceDetection/'
 
     for d in dataset:
         h.append(d[0]) #title
@@ -240,7 +240,7 @@ class StanceDitectionFeature():
     X_fn = self.generate_fn_features(fn_dataset, "StanceFeature")
 
     # Load the best classifier saved model
-    readfile = open('/content/drive/MyDrive/MLFall2020/the-feature-finders/AlternusVera/pickled-model/stance-model-GBC', 'rb')
+    readfile = open('/content/TheFeatureFinders/StanceDetection/stance-model-GBC', 'rb')
     best_clf = pickle.load(readfile)
 
     self.fn_predicted = [self.LABELS[int(a)] for a in best_clf.predict(X_fn)]
@@ -251,7 +251,7 @@ class StanceDitectionFeature():
       x = self.predict_stance(headline,body)
       xTrain = np.array(x).reshape(-1, 1)
 
-      readfile = open('/content/drive/MyDrive/MLFall2020/the-feature-finders/AlternusVera/pickled-model/stanceLabelGNB-model', 'rb')
+      readfile = open('/content/TheFeatureFinders/StanceDetection/stanceLabelGNB-model', 'rb')
       best_clf = pickle.load(readfile)
 
       xPpredicted = best_clf.predict(xTrain)

@@ -42,7 +42,7 @@ def download_url(url, save_path, chunk_size=128):
     z = zipfile.ZipFile(io.BytesIO(r.content))
     z.extractall(save_path)
 
-download_url('https://github.com/jrangu/Datasets/blob/master/randomforest.zip?raw=true', '/content/')
+download_url('https://github.com/jrangu/Datasets/blob/master/randomforest.zip?raw=true', '/content/TeamSeekers/SupportingFiles/')
 
 import pickle
 
@@ -71,7 +71,7 @@ class Seekers_StanceDetection:
     return text
 
   def predict(self, text):
-    loaded_model = pickle.load(open('randomforest.sav', 'rb'))
+    loaded_model = pickle.load(open('/content/TeamSeekers/SupportingFiles/randomforest.sav', 'rb'))
     #loaded_model = cp.load(urlopen("https://drive.google.com/file/d/1Hs7Ky85bGDsaKZnERXMmQBIXCvRoWoZZ/view?usp=sharing"))
     processedText = self.process_data(text)
     result = loaded_model.predict_proba([processedText])[:,0][0]

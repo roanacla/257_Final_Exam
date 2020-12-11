@@ -7,8 +7,8 @@ Original file is located at
     https://colab.research.google.com/drive/1g3ZmF6q1G03bQcLCfDr5pU8_cRySlgGY
 """
 
-from google.colab import drive
-drive.mount('/content/drive')
+# from google.colab import drive
+# drive.mount('/content/drive')
 
 # Commented out IPython magic to ensure Python compatibility.
 import pandas as pd
@@ -129,7 +129,7 @@ class ToxicityFeature():
 
         all_text = self.label_sentences(all_text, "Test")
 
-        dbowfile = open('/content/drive/My Drive/MLFall2020/the-feature-finders/AlternusVera/pickled-model/model_dbow', 'rb')
+        dbowfile = open('/content/TheFeatureFinders/SupportingFiles/model_dbow', 'rb')
         model_dbow = pickle.load(dbowfile)
         
 
@@ -137,7 +137,7 @@ class ToxicityFeature():
         test1_vectors_dbow = self.get_vectors(model_dbow, len(all_text), 300, 'Test')
 
         #best Model for toxicity prediction
-        toxicityModel_file = open('/content/drive/My Drive/MLFall2020/the-feature-finders/AlternusVera/pickled-model/toxicity-model', 'rb')
+        toxicityModel_file = open('/content/TheFeatureFinders/SupportingFiles/toxicity-model', 'rb')
         best_clf = pickle.load(toxicityModel_file)
 
         #predictions
@@ -148,7 +148,7 @@ class ToxicityFeature():
         #print(predictedToxicity)
 
         #best Model for fakenews prediction
-        toxicityLabel_file = open('/content/drive/My Drive/MLFall2020/the-feature-finders/AlternusVera/pickled-model/toxicityFakenewsLabel-model', 'rb')
+        toxicityLabel_file = open('/content/TheFeatureFinders/SupportingFiles/toxicityFakenewsLabel-model', 'rb')
         best_labelclf = pickle.load(toxicityLabel_file)
 
         predictedFakeNews = best_labelclf.predict(predictedToxicity)

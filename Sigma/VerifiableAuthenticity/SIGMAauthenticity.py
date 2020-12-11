@@ -118,7 +118,7 @@ class VerifiableAuthenticity:
     dataTrain[labelcolname] = dataTrain.apply(lambda row: self.simplify_venue_label(row['venue']), axis=1)
 
     # Load Model
-    filename = "/content/cmpe257_AlternusVera_SIGMA/VerifiableAuthenticity_PickledModel.pkl"
+    filename = "/content/Sigma/VerifiableAuthenticity/VerifiableAuthenticity_PickledModel.pkl"
     with open(filename, 'rb') as file:
       global Pickled_Model  
       Pickled_Model = pickle.load(file)

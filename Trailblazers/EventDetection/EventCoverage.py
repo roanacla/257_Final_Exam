@@ -56,7 +56,7 @@ def cleaning(raw_news):
 
 
 def predictLable(text):
-  with open('./AlternusVera_EventDetection/event_coverage.pkl', 'rb') as file:  
+  with open('/content/Trailblazers/EventDetection/event_coverage.pkl', 'rb') as file:  
     nb_pipeline_ngram = pickle.load(file)
   data = {'clean':  [text]
         }

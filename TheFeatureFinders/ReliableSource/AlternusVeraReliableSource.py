@@ -5,11 +5,11 @@ import pickle
 class ReliableSource():
 
   def __init__(self):
-    path = "/content/drive/My Drive/MLFall2020/the-feature-finders/AlternusVera/ReliableSource/data.csv"
+    path = "/content/TheFeatureFinders/ReliableSource/data.csv"
     
     
   def FeatureFinders_getSourceReliabilityScore(self, source): # return between 0 and 1, being 0 = True,  1 = Fake
-    path = "/content/drive/My Drive/MLFall2020/the-feature-finders/AlternusVera/ReliableSource/data.csv"
+    path = "/content/TheFeatureFinders/ReliableSource/data.csv"
     fakeNewsSites = pd.read_csv(path)
     for index, row in fakeNewsSites.iterrows():
       score = 100
@@ -34,7 +34,7 @@ class ReliableSource():
     x = self.FeatureFinders_getSourceReliabilityScore(src)
     xTrain = np.array(x).reshape(-1, 1)
 
-    readfile = open('/content/drive/My Drive/MLFall2020/the-feature-finders/AlternusVera/pickled-model/ReliableSourceLabelmodel', 'rb')
+    readfile = open('/content/TheFeatureFinders/ReliableSource/ReliableSourceLabelmodel', 'rb')
     best_clf = pickle.load(readfile)
 
     xPpredicted = best_clf.predict(xTrain)

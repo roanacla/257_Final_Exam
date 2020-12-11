@@ -130,7 +130,7 @@ class Seekers_BertMcc():
       b_input_ids.cuda()
       b_input_mask.cuda()
 
-      model = BertForSequenceClassification.from_pretrained("/content/")
+      model = BertForSequenceClassification.from_pretrained("/content/TeamSeekers/SupportingFiles/")
 
       # model.cuda()
       desc = model.cuda()

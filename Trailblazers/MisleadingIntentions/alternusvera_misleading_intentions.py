@@ -176,7 +176,7 @@ def predictIntention(text):
 
     def get_sensational_score(df):
         # sensational_words = pd.read_csv('./sensational_words_dict.csv', usecols=[0], sep='\t+', header=None)
-        sensational_words = pd.read_csv('./AlternusVera_MisleadingIntention/Datasets/sensational_words_dict.csv', usecols=[0], sep='\t+', header=None)
+        sensational_words = pd.read_csv('/content/Trailblazers/MisleadingIntentions/Datasets/sensational_words_dict.csv', usecols=[0], sep='\t+', header=None)
         corpus = []
         corpus.append(text)
         sensational_corpus=[]
@@ -184,7 +184,7 @@ def predictIntention(text):
         sensational_corpus.append(sensational_dictionary)
         
         # sentic_net = pd.read_csv('./senticnet5.txt', sep="\t+", header=None, usecols=[0,1,2], names = ["Token", "Polarity", "Intensity"])
-        sentic_net = pd.read_csv('./AlternusVera_MisleadingIntention/Datasets/senticnet5.txt', sep="\t+", header=None, usecols=[0,1,2], names = ["Token", "Polarity", "Intensity"])
+        sentic_net = pd.read_csv('/content/Trailblazers/MisleadingIntentions/Datasets/senticnet5.txt', sep="\t+", header=None, usecols=[0,1,2], names = ["Token", "Polarity", "Intensity"])
         warnings.filterwarnings("ignore")
         sentic_net = sentic_net[~sentic_net['Token'].str.contains('|'.join('_'),na=False)]
         sentic_net = sentic_net.reset_index(drop=True)
