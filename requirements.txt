@@ -1,0 +1,34 @@
+nltk
+spacy
+
+#transformers
+googledrivedownloader
+
+beautifulsoup4
+selenium>=2.44.0,<3.0.0
+requests
+unidecode
+vcrpy
+future
+fake-useragent
+newspaper3k
+
+git+https://github.com/abenassi/Google-Search-API
+
+#GIRLS WHO CODE
+#autogluon
+ktrain
+vaderSentiment
+textstat
+
+#FEATURE FINDERS
+gensim
+xgboost-0.90-py2.py3-none-manylinux1_x86_64.whl
+
+
+#CEREAL KILLERS
+torch
+transformers==3.3
+#autogluon==0.0.15b20201204
+autogluon==0.0.15b20201205
+mxnet-cu100
