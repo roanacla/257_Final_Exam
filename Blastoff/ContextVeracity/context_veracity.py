@@ -20,17 +20,17 @@ import keras
 
 class Context_Veracity():
   def __init__(self):
-    gdd.download_file_from_google_drive(file_id='18NyBuNHikHiUzrAC4oOMUOO5KAaKouEY',
-                                  dest_path='/content/Blastoff/SupportingFiles/context_veracity_models.zip',
-                                  unzip=False)
+    # gdd.download_file_from_google_drive(file_id='18NyBuNHikHiUzrAC4oOMUOO5KAaKouEY',
+                                  # dest_path='/content/Blastoff/SupportingFiles/context_veracity_models.zip',
+                                  # unzip=False)
     self.model = None 
     colnames = ['jsonid', 'label', 'headline_text', 'subject', 'speaker', 'speakerjobtitle', 'stateinfo','partyaffiliation', 'barelytruecounts', 'falsecounts','halftruecounts','mostlytruecounts','pantsonfirecounts','context', 'text']
 
     # unpickling models
     names = ["Random Forest"]
-    with ZipFile('/content/Blastoff/SupportingFiles/context_veracity_models.zip', 'r') as myzip:
-        for name in names:
-            self.model = pickle.load(myzip.open(f'/content/Blastoff/SupportingFiles/{name}_model.pickle'))
+    # with ZipFile('/content/Blastoff/SupportingFiles/context_veracity_models.zip', 'r') as myzip:
+        # for name in names:
+    self.model = pickle.load(myzip.open(f'/content/Blastoff/SupportingFiles/{name}_model.pickle'))
             #print(clf_reload)
 
 
