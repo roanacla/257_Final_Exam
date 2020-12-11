@@ -27,10 +27,10 @@ class Context_Veracity():
     colnames = ['jsonid', 'label', 'headline_text', 'subject', 'speaker', 'speakerjobtitle', 'stateinfo','partyaffiliation', 'barelytruecounts', 'falsecounts','halftruecounts','mostlytruecounts','pantsonfirecounts','context', 'text']
 
     # unpickling models
-    names = ["Random Forest"]
-    # with ZipFile('/content/Blastoff/SupportingFiles/context_veracity_models.zip', 'r') as myzip:
-        # for name in names:
-    self.model = pickle.load(myzip.open(f'/content/Blastoff/SupportingFiles/{name}_model.pickle'))
+    names = ["Random_Forest"]
+    with ZipFile('/content/Blastoff/SupportingFiles/context_veracity_models.zip', 'r') as myzip:
+        for name in names:
+            self.model = pickle.load(myzip.open(f'{name}_model.pickle'))
             #print(clf_reload)
 
 
