@@ -41,7 +41,7 @@ from scipy import sparse
 
 
 
-model = gensim.models.KeyedVectors.load_word2vec_format('/content/TheShinningUnicorns/SupportingFiles/Copy of GoogleNews-vectors-negative300.bin.gz', binary=True)
+model = gensim.models.KeyedVectors.load_word2vec_format('/content/TheShinningUnicorns/SupportingFiles/Copy_of_GoogleNews-vectors-negative300.bin.gz', binary=True)
 words = model.index2word
 
 w_rank = {}
