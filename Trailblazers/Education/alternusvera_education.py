@@ -22,10 +22,10 @@ from bs4 import BeautifulSoup
 import requests
 import pandas as pd
 import re
-nltk.download('stopwords')
-nltk.download('wordnet')
-nltk.download('averaged_perceptron_tagger')
-nltk.download('punkt')
+# nltk.download('stopwords')
+# nltk.download('wordnet')
+# nltk.download('averaged_perceptron_tagger')
+# nltk.download('punkt')
 stop_words = set(stopwords.words('english'))
 import os
 

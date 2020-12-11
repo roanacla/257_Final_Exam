@@ -2,9 +2,9 @@ import sys
 import re
 import numpy as np
 import nltk
-nltk.download('stopwords')
-nltk.download('punkt')
-nltk.download('vader_lexicon')
+# nltk.download('stopwords')
+# nltk.download('punkt')
+# nltk.download('vader_lexicon')
 
 import dill
 import pickle

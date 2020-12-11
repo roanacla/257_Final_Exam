@@ -14,7 +14,7 @@ Standard imports:
 from nltk.stem import WordNetLemmatizer, SnowballStemmer
 stemmer = SnowballStemmer('english')
 import nltk
-nltk.download('wordnet')
+# nltk.download('wordnet')
 
 import cloudpickle as cp
 from urllib.request import urlopen
@@ -22,7 +22,7 @@ from urllib.request import urlopen
 import string
 
 import nltk
-nltk.download('stopwords')
+# nltk.download('stopwords')
 from nltk.corpus import stopwords
 
 sw = stopwords.words('english')

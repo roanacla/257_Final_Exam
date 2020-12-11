@@ -40,7 +40,7 @@ class Topics_with_LDA_Bigram:
     from nltk.corpus import stopwords
     from gensim.utils import simple_preprocess
     import nltk
-    nltk.download('stopwords')
+    # nltk.download('stopwords')
     stop_words = stopwords.words('english')
     stop_words.extend(['from', 'subject', 're', 'edu', 'use'])
     return [[word for word in simple_preprocess(str(doc)) if word not in stop_words] for doc in texts]

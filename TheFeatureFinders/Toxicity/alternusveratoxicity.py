@@ -30,7 +30,7 @@ from sklearn import utils
 import gensim
 from gensim.models.doc2vec import TaggedDocument
 import nltk
-nltk.download('stopwords')
+# nltk.download('stopwords')
 from nltk.corpus import stopwords  # stop words are, is, the etc. which are not needed for model
 from nltk.corpus import words 
 from textblob import TextBlob, Word
@@ -40,8 +40,8 @@ from tqdm import tqdm
 from sklearn import feature_extraction
 import nltk
 import statistics
-nltk.download('punkt')
-nltk.download('wordnet')
+# nltk.download('punkt')
+# nltk.download('wordnet')
 tqdm.pandas(desc="progress-bar")
 CV_N_REPEATS = 20
 BINS = 10

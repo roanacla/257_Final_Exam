@@ -33,8 +33,8 @@ import numpy as np
 import nltk
 import re
 import nltk
-nltk.download('stopwords')
-nltk.download('averaged_perceptron_tagger')
+# nltk.download('stopwords')
+# nltk.download('averaged_perceptron_tagger')
 import matplotlib.pyplot as plt
 from scipy import sparse
 
@@ -51,8 +51,8 @@ for i,word in enumerate(words):
 WORDS = w_rank
 
 import re
-nltk.download('punkt')
-nltk.download('wordnet')
+# nltk.download('punkt')
+# nltk.download('wordnet')
 def cleaning(raw_news):
     import nltk
     

@@ -19,8 +19,8 @@ from csv import DictReader
 from tqdm import tqdm
 from sklearn import feature_extraction
 import nltk
-nltk.download('punkt')
-nltk.download('wordnet')
+# nltk.download('punkt')
+# nltk.download('wordnet')
 
 class StanceDitectionFeature():
 

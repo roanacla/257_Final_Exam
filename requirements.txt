@@ -29,6 +29,6 @@ gensim
 #CEREAL KILLERS
 torch
 transformers==3.3
-#autogluon==0.0.15b20201204
+autogluon==0.0.15b20201204
 autogluon==0.0.15b20201205
 mxnet-cu100

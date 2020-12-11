@@ -55,8 +55,8 @@ import nltk
 from nltk.stem import PorterStemmer #for stemming
 from nltk.tokenize import word_tokenize
 import nltk.corpus
-nltk.download('treebank')
-nltk.download('universal_tagset') 
+# nltk.download('treebank')
+# nltk.download('universal_tagset') 
 import pickle
 import numpy as np
 import pandas as pd

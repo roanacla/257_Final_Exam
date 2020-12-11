@@ -31,9 +31,9 @@ class GirlsWhoCode_Toxicity:
     import re
     import nltk
     from nltk.stem.wordnet import WordNetLemmatizer
-    nltk.download('punkt')
-    nltk.download('stopwords')
-    nltk.download('wordnet')
+    # nltk.download('punkt')
+    # nltk.download('stopwords')
+    # nltk.download('wordnet')
     import nltk
 
     # 1. Remove non-letters/Special Characters and Punctuations
@@ -150,7 +150,7 @@ class GirlsWhoCode_Toxicity:
     from gensim.models import Doc2Vec
     import nltk
     from nltk import word_tokenize
-    nltk.download('punkt')
+    # nltk.download('punkt')
     tagged_text = []
     for index, row in df.iterrows():
         tagged_text.append(TaggedDocument(words=word_tokenize(row['headline_text']), tags=[row['label']]))
@@ -172,7 +172,7 @@ class GirlsWhoCode_Toxicity:
     from gensim.models.doc2vec import TaggedDocument
     import nltk
     from nltk import word_tokenize
-    nltk.download('punkt')
+    # nltk.download('punkt')
     tagged_text = []
     for index, row in df.iterrows():
         tagged_text.append(TaggedDocument(words=word_tokenize(row['headline_text']), tags=[row[label]]))

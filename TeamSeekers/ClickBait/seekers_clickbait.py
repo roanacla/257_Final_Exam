@@ -26,22 +26,22 @@ import warnings
 import numpy as np
 np.random.seed(2018)
 import nltk
-nltk.download('wordnet')
+# nltk.download('wordnet')
 import re
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 import nltk
 import pickle
-nltk.download('stopwords')
+# nltk.download('stopwords')
 from nltk.corpus import stopwords 
 from nltk.stem.porter import PorterStemmer
 from nltk.tokenize import word_tokenize 
-nltk.download('punkt')
+# nltk.download('punkt')
 import nltk
 from scipy import sparse
 from urllib.request import urlopen
-nltk.download('averaged_perceptron_tagger')
+# nltk.download('averaged_perceptron_tagger')
 from string import punctuation
 
 class Seekers_ClickBait():

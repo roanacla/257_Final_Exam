@@ -5,13 +5,13 @@ import gensim
 from sklearn.model_selection import train_test_split
 import re
 import nltk
-nltk.download('stopwords')
-nltk.download('averaged_perceptron_tagger')
+# nltk.download('stopwords')
+# nltk.download('averaged_perceptron_tagger')
 from scipy import sparse
 from google_drive_downloader import GoogleDriveDownloader as gdd
 from nltk.stem import PorterStemmer
 from nltk.tokenize import word_tokenize 
-nltk.download('punkt')
+# nltk.download('punkt')
 from zipfile import ZipFile
 import pickle
 from sklearn.feature_extraction.text import CountVectorizer

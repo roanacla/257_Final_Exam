@@ -13,10 +13,10 @@ from nltk.stem.wordnet import WordNetLemmatizer
 lemmatizer = nltk.WordNetLemmatizer()
 from nltk.corpus import stopwords
 from string import punctuation
-nltk.download('punkt')
-nltk.download('averaged_perceptron_tagger')
-nltk.download('wordnet')
-nltk.download('stopwords')
+# nltk.download('punkt')
+# nltk.download('averaged_perceptron_tagger')
+# nltk.download('wordnet')
+# nltk.download('stopwords')
 import torch
 from transformers import BertTokenizer
 import torch

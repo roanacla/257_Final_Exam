@@ -15,9 +15,9 @@ import nltk
 import pickle
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from google_drive_downloader import GoogleDriveDownloader as gdd
-nltk.download('vader_lexicon')
-nltk.download('punkt') # word_tokenize
-nltk.download('averaged_perceptron_tagger') # pos_tag
+# nltk.download('vader_lexicon')
+# nltk.download('punkt') # word_tokenize
+# nltk.download('averaged_perceptron_tagger') # pos_tag
 
 import keras
 from keras import layers

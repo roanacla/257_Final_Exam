@@ -16,10 +16,10 @@ class Gwc_Bias():
       lemmatizer = nltk.WordNetLemmatizer()
       from nltk.corpus import stopwords
       from string import punctuation
-      nltk.download('punkt')
-      nltk.download('averaged_perceptron_tagger')
-      nltk.download('wordnet')
-      nltk.download('stopwords')
+      # nltk.download('punkt')
+      # nltk.download('averaged_perceptron_tagger')
+      # nltk.download('wordnet')
+      # nltk.download('stopwords')
 
     
       # 1. Remove non-letters/Special Characters and Punctuations
@@ -89,7 +89,7 @@ class Gwc_Bias():
     
     def get_senti(sentence):
       import nltk.sentiment
-      nltk.download('vader_lexicon')
+      # nltk.download('vader_lexicon')
       from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
       senti = nltk.sentiment.vader.SentimentIntensityAnalyzer()
 

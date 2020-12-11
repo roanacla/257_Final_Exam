@@ -59,7 +59,7 @@ from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
 class Girlswhocode_PoliticalAfiiliation:
  
-  nltk.download('stopwords')
+  # nltk.download('stopwords')
 
   #label encoding
   def encode_news_type(input_label):

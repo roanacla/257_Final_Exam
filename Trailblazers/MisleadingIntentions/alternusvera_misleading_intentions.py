@@ -22,7 +22,7 @@ from gensim.models import Word2Vec
 import numpy as np
 import re
 import statistics
-nltk.download('averaged_perceptron_tagger')
+# nltk.download('averaged_perceptron_tagger')
 
 from gensim import corpora, models
 from nltk.stem.wordnet import WordNetLemmatizer
@@ -31,11 +31,11 @@ from sklearn.preprocessing import scale
 from sklearn.metrics.pairwise import cosine_similarity
 from scipy import spatial
 import warnings
-nltk.download('punkt')
-nltk.download('vader_lexicon')
+# nltk.download('punkt')
+# nltk.download('vader_lexicon')
 warnings.filterwarnings('ignore')
-nltk.download('wordnet')
-nltk.download("stopwords") 
+# nltk.download('wordnet')
+# nltk.download("stopwords") 
 
 
 def predictIntention(text):
