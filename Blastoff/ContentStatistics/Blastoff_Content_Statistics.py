@@ -101,13 +101,13 @@ class BlastoffContentStatistics(object):
         self.encoder = None
 
         gdd.download_file_from_google_drive(file_id='1oTfsNgkmEBemkVfrWSjnc-K9svmL7Iak',
-                                            dest_path='./bcs_encoder.zip',
+                                            dest_path='/content/Blastoff/SupportingFiles/bcs_encoder.zip',
                                             unzip=False)
 
-        archive = ZipFile('bcs_encoder.zip')
+        archive = ZipFile('/content/Blastoff/SupportingFiles/bcs_encoder.zip')
         for file in archive.namelist():
             archive.extract(file, './')
-        self.encoder = keras.models.load_model('./bcs_encoder')
+        self.encoder = keras.models.load_model('/content/Blastoff/SupportingFiles/bcs_encoder')
 
         if mpath:
             self.mpath = mpath
@@ -118,18 +118,18 @@ class BlastoffContentStatistics(object):
                 try:
                     print("Loading default pretrained model.")
                     gdd.download_file_from_google_drive(file_id='1oFjoL9LWrp2-YPSJL2UhBQ1efV9LiC2n',
-                                                        dest_path='./content_statistic_model.pickle',
+                                                        dest_path='/content/Blastoff/SupportingFiles/content_statistic_model.pickle',
                                                         unzip=False)
-                    self.clf = pickle.load(open('content_statistic_model.pickle', 'rb'))
+                    self.clf = pickle.load(open('/content/Blastoff/SupportingFiles/content_statistic_model.pickle', 'rb'))
                 except:
                     print("Unable to load default model. Please contact author or train a new one.")
         else:
             try:
                 print("Loading default pretrained model.")
                 gdd.download_file_from_google_drive(file_id='1oFjoL9LWrp2-YPSJL2UhBQ1efV9LiC2n',
-                                                    dest_path='./content_statistic_model.pickle',
+                                                    dest_path='/content/Blastoff/SupportingFiles/content_statistic_model.pickle',
                                                     unzip=False)
-                self.clf = pickle.load(open('content_statistic_model.pickle', 'rb'))
+                self.clf = pickle.load(open('/content/Blastoff/SupportingFiles/content_statistic_model.pickle', 'rb'))
             except:
                 print("Unable to load default model. Please contact author or train a new one.")
 
@@ -436,7 +436,7 @@ class BlastoffContentStatistics(object):
 
     def export(self, mpath):
         if path.isdir(mpath):
-            pickle.dump(self.clf, open(path.join(mpath, 'content_statistic_model.pickle'), 'wb'))
+            pickle.dump(self.clf, open(path.join(mpath, '/content/Blastoff/SupportingFiles/content_statistic_model.pickle'), 'wb'))
         else:
             print("Path not available.")
 

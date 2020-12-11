@@ -23,7 +23,7 @@ textstat
 
 #FEATURE FINDERS
 gensim
-xgboost-0.90-py2.py3-none-manylinux1_x86_64.whl
+/content/TheFeatureFinders/SupportingFiles/xgboost-0.90-py2.py3-none-manylinux1_x86_64.whl
 
 
 #CEREAL KILLERS
