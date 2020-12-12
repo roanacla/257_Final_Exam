@@ -220,10 +220,10 @@ class StanceDitectionFeature():
         h.append(d[0]) #title
         b.append(d[1]) #text
 
-    X_overlap = self.gen_or_load_feats(self.word_overlap_features, h, b, base_path+"features/overlap."+name+".npy")
-    X_refuting = self.gen_or_load_feats(self.refuting_features, h, b, base_path+"features/refuting."+name+".npy")
-    X_polarity = self.gen_or_load_feats(self.polarity_features, h, b, base_path+"features/polarity."+name+".npy")
-    X_hand = self.gen_or_load_feats(self.hand_features, h, b, base_path+"features/hand."+name+".npy")
+    X_overlap = self.gen_or_load_feats(self.word_overlap_features, h, b, base_path+"overlap."+name+".npy")
+    X_refuting = self.gen_or_load_feats(self.refuting_features, h, b, base_path+"refuting."+name+".npy")
+    X_polarity = self.gen_or_load_feats(self.polarity_features, h, b, base_path+"polarity."+name+".npy")
+    X_hand = self.gen_or_load_feats(self.hand_features, h, b, base_path+"hand."+name+".npy")
 
     X = np.c_[X_hand, X_polarity, X_refuting, X_overlap]
     return X
