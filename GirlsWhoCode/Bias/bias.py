@@ -109,8 +109,8 @@ class Gwc_Bias():
 
     def get_bias_score(text):
       #mounting google drive
-      from google.colab import drive
-      drive.mount('/content/drive/')
+      # from google.colab import drive
+      # drive.mount('/content/drive/')
       import pandas as pd
       import numpy as np
       import pickle

@@ -144,8 +144,8 @@ class Topics_with_LDA_Bigram:
     import numpy as np
 
     #mounting google drive
-    from google.colab import drive
-    drive.mount('/content/drive/')
+    # from google.colab import drive
+    # drive.mount('/content/drive/')
 
     cols = [[headline]]
     df_testing = pd.DataFrame(cols,columns=['News'])
