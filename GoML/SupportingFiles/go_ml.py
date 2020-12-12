@@ -163,7 +163,7 @@ def WritingStyleScore(text):  # return between 0 and 1, being 0 = True,  1 = Fak
   binaryValue, probValue  = writingstyle.predict(text)
   return (1 - float(probValue))
 
-print(WritingStyleScore("College Republicans, YAF Sue Berkeley over Ann Coulter Event - Breitbart"))
+# print(WritingStyleScore("College Republicans, YAF Sue Berkeley over Ann Coulter Event - Breitbart"))
 
 """## Identify Fake News"""
 
@@ -191,18 +191,18 @@ def isFakeNews(text, headline="", numAuthors = 0, source = "", party =""):
     probTotal = sum(prob[0:len(prob)]) / sumW
     return probTotal
     
-result = isFakeNews("Yesterday, the Brazilian soccer team won the world cup by defeating Argentina", "World Cup ends", 1, "cnn.com", "republican")
-print(result)
+# result = isFakeNews("Yesterday, the Brazilian soccer team won the world cup by defeating Argentina", "World Cup ends", 1, "cnn.com", "republican")
+# # print(result)
 
-if result < 0.05 :
-  print("Pants-Fire!")
-elif result < 0.20:
-  print("False")
-elif result < 0.40:
-  print("Barely-True")
-elif result < 0.60:
-  print("Half-True")
-elif result < 0.80:
-  print("Mostly-True")
-else:
-    print("True")
+# if result < 0.05 :
+#   print("Pants-Fire!")
+# elif result < 0.20:
+#   print("False")
+# elif result < 0.40:
+#   print("Barely-True")
+# elif result < 0.60:
+#   print("Half-True")
+# elif result < 0.80:
+#   print("Mostly-True")
+# else:
+#     print("True")

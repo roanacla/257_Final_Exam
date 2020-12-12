@@ -85,7 +85,7 @@ def predictLable(text):
   
 
   cwd = os.getcwd()
-  print(cwd)
+  # print(cwd)
 
   with open('/content/Trailblazers/Education/knn_speaker_Model.pkl', 'rb') as file:  
     knn_speaker_Model = pickle.load(file)
@@ -101,7 +101,7 @@ def predictLable(text):
 
   src=speaker_map.get(res)
 
-  print(src)  
+  # print(src)  
   # print(df_test)
   for key in speaker_map:
     if speaker_map[key] == src:

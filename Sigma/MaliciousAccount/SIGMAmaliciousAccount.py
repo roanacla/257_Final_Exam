@@ -307,10 +307,10 @@ class MalicousAccount( object ):
         training_data = df_evalData_Ngram.copy()
         Xng = training_data.iloc[:,:-1]
         yng = training_data.iloc[:,-1:]
-        print("X Columns: ")
-        print(Xng.columns)
-        print("y Columns: ")
-        print(yng.columns)
+        # print("X Columns: ")
+        # print(Xng.columns)
+        # print("y Columns: ")
+        # print(yng.columns)
         names = ["Nearest Neighbors", #"Linear SVM", #"RBF SVM", "Gaussian Process",
                 "Decision Tree", "Random Forest", "AdaBoost", #"Neural Net",
                 "Naive Bayes", "QDA", "XGBoost", "Logistic Reg"]
@@ -349,14 +349,14 @@ class MalicousAccount( object ):
             test_accuracy = accuracy_score(yng_test, pred_test)
           
             rowsLink.append([score, train_accuracy, test_accuracy, name, clf, (time() - start_time)])
-            print('Classifier = %s, Score (test, accuracy) = %.2f,' %(name, score), 'Train accuracy = %.2f ' % train_accuracy, 
-                  'Test accuracy = %.2f ' % test_accuracy, 'Training time = %.2f ' % (time() - start_time))
+            # print('Classifier = %s, Score (test, accuracy) = %.2f,' %(name, score), 'Train accuracy = %.2f ' % train_accuracy, 
+                  # 'Test accuracy = %.2f ' % test_accuracy, 'Training time = %.2f ' % (time() - start_time))
             if score > max_score:
                 clf_best = clf
                 max_score = score
                 max_class = name
         warnings.resetwarnings()
-        print(80*'-' )
-        print('Best --> Classifier = %s, Score (test, accuracy) = %.2f' %(max_class, max_score))
+        # print(80*'-' )
+        # print('Best --> Classifier = %s, Score (test, accuracy) = %.2f' %(max_class, max_score))
         dfCla_mullerloop = pd.DataFrame(rowsLink, columns=["score", "train accuracy", "test accuracy", "name", "classifier", "Time-elapsed"]).sort_values('score', ascending=False).reset_index(drop=True)
         return dfCla_mullerloop

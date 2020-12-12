@@ -167,7 +167,7 @@ class Topics_with_LDA_Bigram:
         
     # Do lemmatization keeping only noun, adj, vb, adv
     dt_lemmatized = Topics_with_LDA_Bigram.lemmatization(dt_words_bigrams)
-    print(dt_lemmatized) 
+    # print(dt_lemmatized) 
 
 
     # Create Dictionary
@@ -195,7 +195,7 @@ class Topics_with_LDA_Bigram:
 
     #Distillation - Sentiment analysis score
     sentiment_score_dt = Topics_with_LDA_Bigram.sentiment_analyzer_scores(df_testing)
-    print(sentiment_score_dt)
+    # print(sentiment_score_dt)
 
     #append dataset with sentiment label and normalized encoded value
     sentiment_score = pd.DataFrame(sentiment_score_dt)
@@ -204,7 +204,7 @@ class Topics_with_LDA_Bigram:
     df_testing['Keywords'] = dt_dominant_topic['Keywords']
     df_testing['Dominant_Topic'] = dt_dominant_topic['Dominant_Topic']
     df_testing['Topic_Score'] = dt_dominant_topic['Topic_Score']
-    print(df_testing.head())
+    # print(df_testing.head())
 
     #Get test data for classification
 

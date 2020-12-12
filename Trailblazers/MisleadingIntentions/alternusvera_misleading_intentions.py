@@ -278,7 +278,7 @@ def predictIntention(text):
                                'NNP','NNPS','PDT','POS','PRP','PRP$','RB','RBR','RBS','RP','SYM',
                                'TO','UH','VB','VBD','VBG','VBN','VBP','VBZ','WDT','WP','WP$','WRB'])
        
-    with open('./AlternusVera_MisleadingIntention/neural_net.pkl', 'rb') as file:  
+    with open('/content/Trailblazers/MisleadingIntentions/Datasets/neural_net.pkl', 'rb') as file:  
     # with open('./neural_net.pkl', 'rb') as file:  
         neural_net_model = pickle.load(file)
 

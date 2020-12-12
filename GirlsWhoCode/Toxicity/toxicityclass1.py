@@ -190,15 +190,15 @@ class GirlsWhoCode_Toxicity:
     #converting the text and the label into a dataframe
     import pandas as pd
     #mounting google drive
-    from google.colab import drive
-    drive.mount('/content/drive/')
+    # from google.colab import drive
+    # drive.mount('/content/drive/')
     cols = [[headline]]
     df_testing = pd.DataFrame(cols,columns=['headline_text'])
     df_testing.head()
 
     #encoding the label from text to numeric value
     #df_testing = GirlsWhoCode_Toxicity.encodeLabel(df_testing)
-    print(df_testing.head())
+    # print(df_testing.head())
 
     #cleanup the text
     df_testing['headline_text'] = df_testing["headline_text"].apply(GirlsWhoCode_Toxicity.cleaning)
@@ -209,7 +209,7 @@ class GirlsWhoCode_Toxicity:
 
     #encoding the toxicity
     df_testing = GirlsWhoCode_Toxicity.encodeToxicity(df_testing)
-    print(df_testing.head())
+    # print(df_testing.head())
     #applying distillations
     #VADER Sentiment Analysis
     #df_testing = GirlsWhoCode_Toxicity.getSentiment(df_testing)
@@ -218,7 +218,7 @@ class GirlsWhoCode_Toxicity:
 
     df_testing['sentiment'] = sentiment_score['sentiment_label']
     df_testing['sentiment_encode'] = sentiment_score['sentiment_label_encode']
-    print(df_testing.head())
+    # print(df_testing.head())
     #Topic modelling
     import gensim
     from gensim.models.doc2vec import TaggedDocument

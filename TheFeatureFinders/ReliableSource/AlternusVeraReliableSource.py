@@ -38,7 +38,7 @@ class ReliableSource():
     best_clf = pickle.load(readfile)
 
     xPpredicted = best_clf.predict(xTrain)
-    print(xPpredicted)
+    # print(xPpredicted)
     xPredicedProb = best_clf.predict_proba(xTrain)[:,1]
     #xPredicedProb = best_clf.predict_proba(xTrain)
     #print(xPredicedProb)

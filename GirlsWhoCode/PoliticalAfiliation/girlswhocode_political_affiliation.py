@@ -263,7 +263,7 @@ class Girlswhocode_PoliticalAfiiliation:
 
 
   def identify_topic_number_score(text,df_train):
-    print("here in LDA")
+    # print("here in LDA")
     documents = df_train[['headline_text']]
     processed_docs = documents['headline_text'].map(Girlswhocode_PoliticalAfiiliation.get_word_tokens)
     dictionary = gensim.corpora.Dictionary(processed_docs)
@@ -293,7 +293,7 @@ class Girlswhocode_PoliticalAfiiliation:
 
       #creating the dataframe
       df_testing = pd.DataFrame(test,columns=['headline_text','partyaffiliation'])
-      print(df_testing.columns)
+      # print(df_testing.columns)
 
       #preprocessing of the text
       df_testing = Girlswhocode_PoliticalAfiiliation.text_preprocess(df_testing)
@@ -312,7 +312,7 @@ class Girlswhocode_PoliticalAfiiliation:
       df_testing['democrats_vector'] = Girlswhocode_PoliticalAfiiliation.get_issues_vector(df_testing,democrats_issues)
       
       df_testing['liberterian_vector'] = Girlswhocode_PoliticalAfiiliation.get_issues_vector(df_testing,libertarian_issues)
-      print(df_testing.columns)
+      # print(df_testing.columns)
 
       party_affiliation_dict = pd.read_csv('/content/GirlsWhoCode/PoliticalAfiliation/party_affiliaiton_dict.csv')
 
@@ -347,29 +347,29 @@ class Girlswhocode_PoliticalAfiiliation:
       sentiment_score_input = pd.DataFrame(sentiment_score_input)
       df_testing['sentiment'] = sentiment_score_input['senti_label']
       df_testing['sentiment_encode'] = sentiment_score_input['senti_label_encode']
-      print(df_testing.columns)
+      # print(df_testing.columns)
 
       #load train dataset to get the dictionary of issues to calculate the topic score of each headline text
       colnames = ['jsonid', 'label', 'headline_text', 'subject', 'speaker', 'speakerjobtitle', 'stateinfo','partyaffiliation', 'barelytruecounts', 'falsecounts','halftruecounts','mostlytrueocunts','pantsonfirecounts','context']
       df_train = pd.read_csv('/content/GirlsWhoCode/PoliticalAfiliation/train.tsv', sep='\t', names = colnames,error_bad_lines=False)
       #preprocess the df_train headline_text
       df_train = Girlswhocode_PoliticalAfiiliation.train_preprocess(df_train)
-      print(df_train.columns)
+      # print(df_train.columns)
 
       
 
 
       #get topic score related to party
       df_testing[['topic_number','topic_score']] = df_testing.apply(lambda row: Girlswhocode_PoliticalAfiiliation.identify_topic_number_score(row['headline_text'],df_train), axis=1)
-      print(df_testing.head())
+      # print(df_testing.head())
 
       #get the tagged text fot the headline
       tagged_pa_text_test = Girlswhocode_PoliticalAfiiliation.tag_headline(df_testing, 'partyaffiliation_encode')
-      print("tagged text",tagged_pa_text_test)
+      # print("tagged text",tagged_pa_text_test)
       #get the Doc2Vec for the headline_text
-      print("before")
+      # print("before")
       #doc2vec_model_pa_test = Doc2Vec(documents = tagged_pa_text_test, dm=0, num_features=500, min_count=2, size=20, window=4)
-      print("after")
+      # print("after")
       #get the test vector 
       #X_test = Girlswhocode_PoliticalAfiiliation.get_political_affiliation_test_vector(df_testing, doc2vec_model_pa_test)
       #def get_political_affiliation_test_vector(df, doc2vec_model_pa_test):
